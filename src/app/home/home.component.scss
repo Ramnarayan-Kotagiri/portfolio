@@ -1,0 +1,93 @@
+.resumeButton {
+  color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 196, 255, 0.9) 0px 13px 19px -6px;
+  text-decoration: none;
+  padding: 0.9rem 1.4rem;
+  background: rgb(0, 195, 255);
+  border-radius: 0.3rem;
+  transition: all 0.5s ease 0s;
+  margin: 10px;
+  background: linear-gradient(-45deg, #EE7752, #e73c7e, #23a605, #2305ab);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+.resumeButton:first-child {
+  margin-right: 1rem;
+  color: rgb(0, 195, 255);
+  box-shadow: rgb(185, 185, 185) 0px 13px 19px -6px;
+  background: rgb(249, 249, 249);
+}
+
+/* Transition to a bigger shadow on hover */
+.resumeButton:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 380px) {
+  .resumeButton:first-child {
+    margin: 0px auto 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .resumeButton {
+    width: 80%;
+    text-align: center;
+    margin: 0px auto;
+  }
+}
+
+
+.contactButtons {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+@media (max-width: 380px) {
+  .contactButtons {
+    flex-direction: column;
+  }
+}
+
+.smallContainer {
+  max-width: 850px;
+  margin: 0px auto;
+  padding: 4rem 1rem;
+  // background: linear-gradient(-45deg, #EE7752, #e73c7e, #23a605, #2305ab);
+  // background-size: 400% 400%;
+  // position: relative;
+  // animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media (max-width: 992px) {
+  .smallContainer {
+    width: 95%;
+  }
+
+}
+
+#rubic-cube {
+  animation: rubik-cube 10s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rubik-cube {
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
