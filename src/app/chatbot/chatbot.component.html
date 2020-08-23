@@ -1,0 +1,73 @@
+<form id="form" cf-form>
+  <fieldset cf-questions="Welcome Ram, Which Category do you come under?">
+    <label for="intro-yes">Technology
+      <input type="radio" name="cfc-intro" id="intro-technology" value="technology">
+    </label>
+
+    <label for="intro-no">Business & Operations
+      <input type="radio" name="cfc-intro" id="intro-business" value="business">
+    </label>
+  </fieldset>
+
+  <fieldset cf-questions="Please select one to know more about Technology Category!">
+    <label for="step2-technology-capability">Capabilities
+      <input type="radio" name="cfc-step2-technology" id="step2-technology-capability" value="capability"
+        cf-conditional-cfc-intro="technology">
+    </label>
+
+    <label for="step2-technology-tags">Tags
+      <input type="radio" name="cfc-step2-technology" id="step2-technology-tags" value="tags"
+        cf-conditional-cfc-intro="technology">
+    </label>
+  </fieldset>
+
+  <fieldset cf-questions="Please select one to know more about Business Category!">
+    <label for="step2-business-capability">Capabilities
+      <input type="radio" name="cfc-step2-business" id="step2-business-capability" value="capability"
+        cf-conditional-cfc-intro="busines">
+    </label>
+
+    <label for="step2-business-tags">Tags
+      <input type="radio" name="cfc-step2-business" id="step2-business-tags" value="tags"
+        cf-conditional-cfc-intro="business">
+    </label>
+  </fieldset>
+  <cf-robot-message
+    cf-questions="Technology Capabilities are conceptual-level elements that capture what technology does."
+    cf-conditional-cfc-intro="technology" cf-conditional-cfc-step2-technology="capability"></cf-robot-message>
+  <cf-robot-message cf-questions="Listed Below are the Capabilities available in Technology Category."
+    cf-conditional-cfc-intro="technology" cf-conditional-cfc-step2-technology="capability"></cf-robot-message>
+  <fieldset cf-questions="Please Select One to View the tools satisfying the capability."
+    *ngFor="let item of technology_capabilities">
+
+    <label for="{{item}}">{{item}}
+      <input type="radio" name="cfc-step3-technology" id="{{item}}" value="{{item}}"
+        cf-conditional-cfc-intro="technology" cf-conditional-cfc-step2-technology="capability">
+    </label>
+  </fieldset>
+
+
+  <cf-robot-message cf-questions="Business Capabilities are conceptual-level elements that capture what business does."
+    cf-conditional-cfc-intro="business" cf-conditional-cfc-step2-business="capability"></cf-robot-message>
+  <cf-robot-message cf-questions="Listed Below are the Capabilities available in Business Category."
+    cf-conditional-cfc-intro="business" cf-conditional-cfc-step2-business="capability"></cf-robot-message>
+  <fieldset cf-questions="Please Select One to View the tools satisfying the capability."
+    *ngFor="let item of business_capabilities">
+
+    <label for="{{item}}">{{item}}
+      <input type="radio" name="cfc-step3-business" id="{{item}}" value="Authorization"
+        cf-conditional-cfc-intro="business" cf-conditional-cfc-step2-business="capability">
+    </label>
+
+  </fieldset>
+  <fieldset cf-questions="Please find the below tools with the capability : Authorization"
+    *ngFor="let item of business_tools">
+
+    <label for="{{item}}">{{item}}
+      <input type="checkbox" name="cfc-step4-business" id="{{item}}" value="{{item}}"
+        cf-conditional-cfc-step3-business="Authorization">
+    </label>
+  </fieldset>
+  <input id="outsider" type="text" cf-questions="Thanks and Have a nice day !" />
+</form>
+<div id="cf-context" role="cf-context" cf-context></div>

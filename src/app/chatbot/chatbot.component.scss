@@ -1,0 +1,12 @@
+#cf-context {
+  width: 100vw;
+  height: 80vh;
+}
+
+#form {
+  height: 0px;
+  overflow: hidden;
+}
+@import "../../../node_modules/conversational-form/src/styles/mixins/cf-mixins";
+
+@import "../../../node_modules/conversational-form/src/styles/conversational-form";
