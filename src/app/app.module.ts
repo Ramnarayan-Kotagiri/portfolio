@@ -10,6 +10,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlogComponent } from './blog/blog.component';
+import { JukeboxComponent } from './jukebox/jukebox.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BlogComponent } from './blog/blog.component';
     ChatbotComponent,
     AboutComponent,
     ContactComponent,
-    BlogComponent
+    BlogComponent,
+    JukeboxComponent
   ],
   imports: [
     BrowserModule,
